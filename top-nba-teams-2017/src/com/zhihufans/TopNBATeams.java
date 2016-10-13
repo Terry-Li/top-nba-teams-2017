@@ -51,6 +51,14 @@ public class TopNBATeams {
 			team.rank = i+1;
 			System.out.println(team);
 		}
+		
+		//rank the teams by the average rank of five members, assuming that all players not making top 100 rank 101
+		Collections.sort(teamList, new TeamComparator());
+		for (int i=0; i<teamList.size(); i++) {
+			Team team = teamList.get(i);
+			team.rank = i+1;
+			System.out.println(team);
+		}
 	}
 
 }
